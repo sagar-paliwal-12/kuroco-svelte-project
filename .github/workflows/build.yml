@@ -67,7 +67,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Generate
-        run: npm run prepare
+        run: npm run generate
         # - name: Zip artifact for upload
         #  run: cd dist && zip ../dist.zip . -r
       - name: Archive Production Artifact
