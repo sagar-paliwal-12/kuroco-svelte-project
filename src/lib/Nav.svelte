@@ -1,5 +1,5 @@
 <nav>
-    <img src="https://sample-intern-site.g.kuroco-img.app/files/user/logo.png" height="30" alt="">
+    <img src="https://kuroco-svelte-project.g.kuroco-img.app/files/user/logo.png" height="30" alt="">
     <ul>
         <li>
             <a href="/">Home</a>
