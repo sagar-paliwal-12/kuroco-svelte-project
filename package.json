@@ -2,17 +2,22 @@
 	"name": "kuroco-svelte-project",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "svelte-kit dev",
-		"build": "svelte-kit build",
+		"dev": "env-cmd svelte-kit dev",
+		"build": "env-cmd svelte-kit build",
 		"package": "svelte-kit package",
-		"preview": "svelte-kit preview",
-		"prepare": "svelte-kit sync",
-		"generate": "svelte-kit sync"
+		"preview": "env-cmd svelte-kit preview",
+		"prepare": "svelte-kit sync"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/adapter-static": "^1.0.0-next.34",
 		"@sveltejs/kit": "next",
-		"svelte": "^3.44.0"
+		"svelte": "^3.44.0",
+		"svelte-carousel": "^1.0.19"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"dotenv": "^16.0.1",
+		"env-cmd": "^10.1.0"
+	}
 }
