@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: ${{ github.sha }}-${{ github.run_id }}
-          path: .svelte-kit/output
+          path: build
           retention-days: 7
       - name: Webhook
         uses: diverta/workflow-webhook@v2
