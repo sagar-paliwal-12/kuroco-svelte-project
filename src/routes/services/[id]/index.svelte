@@ -25,6 +25,21 @@
     </div>
 </div>
 
+<div class="features">
+    <div class="container">
+        <center><h2>Key features: -</h2></center>
+        <div class="row justify-content-center">
+            <div class="col-lg-4">
+                <ul>
+                    {#each data.details.ext_5 as key}
+                    <li>{key}</li>
+                    {/each}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
 <ServicesImage data={data} />
 
 <style>
@@ -40,6 +55,11 @@
         width: 70%;
         justify-content: center;
         text-align: center;
+    }
+    .features {
+        background-color: #4f4f4f;
+        color: #fff;
+        padding: 16px 0 ;
     }
 </style>
 

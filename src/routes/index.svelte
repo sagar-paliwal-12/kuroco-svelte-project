@@ -23,20 +23,20 @@
 
 <HomeSlider slider_res={slider_res} />
 
-<div class="container justify-content-center text-center my-4">
-    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Totam magnam, placeat perferendis neque quisquam consequuntur minima fuga adipisci labore aliquam voluptatibus iste? 
-        Ullam reprehenderit maxime quae iure exercitationem voluptatum porro.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Totam magnam, placeat perferendis neque quisquam consequuntur minima fuga adipisci labore aliquam voluptatibus iste? 
-        Ullam reprehenderit maxime quae iure exercitationem voluptatum porro.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Totam magnam, placeat perferendis neque quisquam consequuntur minima fuga adipisci labore aliquam voluptatibus iste? 
-        Ullam reprehenderit maxime quae iure exercitationem voluptatum porro.
-    </h4>
+<div class="container justify-content-center row my-4">
+  <div class="col-lg-8">
+    <h5>Perched in the serene setting of low top Nathdwara Hills, The Marutinandan Grand offers luxurious accommodations and thoughtfully curated amenities.
+    </h5>
+    <ul class="mt-4">
+        <li>The hotel features a wellness center that offers rejuvenating therapies and a gymnasium for fitness enthusiasts. </li>
+        <li>The hotel has a discotheque featuring throbbing music, perfect for night parties. </li>
+        <li>Kids can have a fun-filled stay experience with the kids' play area.</li>
+        <li>The in-house recreational club offers various indoor games.</li>
+    </ul>
     <a href="/about">
         <button type="button" class="btn btn-dark">More about us</button>
     </a>
+  </div>
 </div>
 
 <Testimonial data={data} />

@@ -21,6 +21,11 @@
         data-mdb-slide-to="2"
         aria-label="Slide 1"
       ></button>
+      <button
+        data-mdb-target="#carouselDarkVariant"
+        data-mdb-slide-to="3"
+        aria-label="Slide 1"
+      ></button>
     </div>
 
     <div class="carousel-inner">
