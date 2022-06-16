@@ -1,60 +1,3 @@
-<script>
-    import { get } from 'svelte/store';
-
-    import { profile } from '../stores.js'
-    let email = "";
-    let password = "";
-
-    let status = get(profile);
-    let loginStatus = "";
-    let resultMessage = null;
-
-    let message = "";
-    let error = "";
-
-    let messageColor = {
-        "success": "green",
-        "failure": "red",
-    }
-
-    const handleLogin = async () => {
-        try {
-            const res = await fetch(`${import.meta.env.VITE_BASE_URL}/rcms-api/4/login`, {
-                method: "POST",
-                body: JSON.stringify({
-                    email,
-                    password,
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-            })
-
-            if (res.status === 200) {
-                profile.set(true)
-                status = true
-                localStorage.setItem("authenticated", true)
-                message = "Login Successful";
-            } else {
-                message = "Login Unsuccessful";
-            }   
-
-        } catch(err) {
-            error = err;
-        }
-    }
-
-    const handleLogout = async () => {
-        try {
-            await fetch(`${import.meta.env.VITE_BASE_URL}/rcms-api/4/logout`, {method: "POST"})
-            localStorage.setItem("authenticated", false)
-            profile.set(false)
-            status = false;
-        } catch (err) {
-        }
-    }
-</script>
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- Container wrapper -->
     <div class="container-fluid">
@@ -97,69 +40,9 @@
             </li>
         </ul>
       </div>
-      {#if !status}
-      <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-        Login
-      </button>
-      {:else}
-      <button type="button" class="btn btn-primary" on:click={() => handleLogout()}>
-        Logout
-      </button>
-      {/if}
     </div>
 </nav>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <form on:submit|preventDefault={() => handleLogin()}>
-                <!-- Email input -->
-                <!-- {#if loginStatus !== null}
-                <p style="color: {messageColor[loginStatus]}">{resultMessage}</p>
-                {/if} -->
-                <div class="form-outline mb-4">
-                  <input name="email" type="email" id="form1Example1" class="form-control" bind:value={email}/>
-                  <label class="form-label" for="form1Example1">Email address</label>
-                </div>
-              
-                <!-- Password input -->
-                <div class="form-outline mb-4">
-                  <input name="password" type="password" id="form1Example2" class="form-control" bind:value={password} />
-                  <label class="form-label" for="form1Example2">Password</label>
-                </div>
-              
-                <!-- 2 column grid layout for inline styling -->
-                <div class="row mb-4">
-                  <div class="col d-flex justify-content-center">
-                    <!-- Checkbox -->
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
-                      <label class="form-check-label" for="form1Example3"> Remember me </label>
-                    </div>
-                  </div>
-              
-                  <div class="col">
-                    <!-- Simple link -->
-                    <a href="#!">Forgot password?</a>
-                  </div>
-                </div>
-              
-                <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
-              </form>
-        </div>
-        <!-- <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-        </div> -->
-        </div>
-    </div>
-</div>
 
 <style>
     img {

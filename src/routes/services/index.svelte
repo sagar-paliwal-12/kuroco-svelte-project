@@ -13,25 +13,14 @@
 
 <script>
     export let data;
-    import {profile} from '../../stores'
 
     import { goto } from '$app/navigation';
-    import { get } from 'svelte/store';
-
-    let status = get(profile);
-
-    console.log(get(profile))
 
     const handleCardClick = (id) => {
         goto(`/services/${id}`)
     }
 </script>
 <div class="container my-4">
-    {#if status}
-    <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal2">
-        + Add service
-    </button>
-    {/if}
     <div class="row row-cols-1 row-cols-md-3 g-4">
         {#each data.list as item}
         <div class="col" on:click={() => handleCardClick(item.topics_id)}>
