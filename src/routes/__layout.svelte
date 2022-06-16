@@ -1,14 +1,36 @@
-<script>
-    import Nav from "$lib/Nav.svelte"
+<script context="module">
+    export const load = async ({fetch}) => {
+        const res = await fetch(`${import.meta.env.VITE_BASE_URL}/rcms-api/3/form/3`);
+        const data = await res.json();
+        
+        const media = await fetch(`${import.meta.env.VITE_BASE_URL}/rcms-api/7/social-media`);
+        const media_res = await media.json();
+        
+        return {
+            props: {
+                data,
+                media_res,
+            },
+        };
+    };
 </script>
 
-<div class="container">
+<script>
+    import Nav from "$lib/Nav.svelte"
+    import Footer from "$lib/Footer.svelte";
+    export let data, media_res;
+</script>
+
+<div class="container-fluid">
     <Nav />
     <slot />
+    <Footer data={data} media_res={media_res} />
 </div>
 
 <style>
-    .container {
+    .container-fluid {
         height: 100vh;
+        margin: 0;
+        padding: 0;
     }
 </style>
