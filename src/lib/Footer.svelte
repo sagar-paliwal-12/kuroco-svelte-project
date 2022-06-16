@@ -1,6 +1,5 @@
 <script>
     export let data, media_res;
-    console.log("media_res", media_res)
 
     let email = "";
 

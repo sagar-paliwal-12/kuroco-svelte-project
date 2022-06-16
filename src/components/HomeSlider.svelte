@@ -1,6 +1,5 @@
 <script>
   export let slider_res;
-  console.log("slider_res", slider_res)
 </script>
 
 <div id="carouselDarkVariant" class="carousel slide carousel-fade carousel-dark" data-mdb-ride="carousel">
