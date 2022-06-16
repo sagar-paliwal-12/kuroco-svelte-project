@@ -6,6 +6,8 @@ on:
   issue_comment:
     types: [created, edited]
   workflow_dispatch:
+env:
+  VITE_BASE_URL: ${{secrets.VITE_BASE_URL}}
 jobs:
   #for Push
   pushed_build:
@@ -41,3 +43,4 @@ jobs:
           webhook_url: "https://kuroco-svelte-project.g.kuroco.app/direct/menu/github/"
           webhook_secret: "5a58b5be9587ad322aafa60ca136abf5"
           data: '{"single_zip":"0","domain":"kuroco-svelte-project.g.kuroco-front.app", "repository":"${{ github.repository }}", "run_id":"${{ github.run_id }}", "hash":"${{ github.sha }}"}'
+
