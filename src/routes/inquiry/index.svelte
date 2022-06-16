@@ -151,7 +151,4 @@
     .form-control::-moz-focus-inner {
         border: 1px solid red;
     }
-    li {
-        cursor: pointer;
-    }
 </style>
