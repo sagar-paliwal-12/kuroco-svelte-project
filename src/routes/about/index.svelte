@@ -4,11 +4,11 @@
     <div class="card mb-3 col-lg-4" style="max-width: 540px;">
         <div class="row g-0">
             <div class="col-md-4">
-                <img
+                <!-- <img
                     src="https://mdbcdn.b-cdn.net/wp-content/uploads/2020/06/vertical.webp"
                     alt="Trendy Pants and Shoes"
                     class="img-fluid rounded-start"
-                />
+                /> -->
             </div>
             <div class="col-md-8">
                 <div class="card-body">
