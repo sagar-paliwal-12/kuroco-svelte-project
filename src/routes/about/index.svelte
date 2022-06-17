@@ -34,7 +34,7 @@
         </div>
         <div class="col-lg-4">
             <div class="card text-center">
-                <div class="card-header">CONTACT US</div>
+                <div class="card-header fw-bold">CONTACT US</div>
                 <div class="card-body">
                   <h5 class="card-title">Udaipur</h5>
                   <p class="card-text">The Marutinandan Grand, NH. 8, Odan, Nathdwara, Rajasthan 313301</p>
@@ -52,11 +52,11 @@
 </div>
 
 <div class="partners justify-content-center">
-    <center><h1 class="py-4">OUR PARTNERS</h1></center>
+    <center><h1 class="py-4 fw-bold">OUR PARTNERS</h1></center>
     <div class="container">
-        <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+        <div class="row g-4 justify-content-center">
             {#each data.list as item}
-            <div class="col">
+            <div class="col-5">
                 <div class="card mb-3" >
                     <div class="row g-0">
                         <div class="col-md-5 bg-image" style="--image_url: url({item.ext_4.url});">

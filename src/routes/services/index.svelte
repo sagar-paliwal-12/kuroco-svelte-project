@@ -21,6 +21,7 @@
     }
 </script>
 <div class="container my-4">
+    <center><h1 class="fw-bold">OUR SERVICES</h1></center>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         {#each data.list as item}
         <div class="col" on:click={() => handleCardClick(item.topics_id)}>
@@ -40,5 +41,12 @@
 <style>
     .card-img-top { 
         height: 200px;
+    }
+    .card {
+        cursor: pointer;
+    }
+    .card:hover {
+        background-color: #4f4f4f;
+        color: #fff
     }
 </style>

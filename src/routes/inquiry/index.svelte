@@ -1,5 +1,6 @@
 <script>
     import { onMount } from "svelte";
+    import FormPlaceholder from './components/FormPlaceholder.svelte'
 
     let data = "";
     let activeTab = "enquiry";
@@ -114,16 +115,16 @@
                             </div>
                             {/if}
                             {/each}                        
-                            <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
+                            <button type="submit" class="btn btn-primary btn-block mb-4 col-6">Send</button>
                         </form>
                         {:else if message}
                         <h4>{message}</h4>
-                        <button on:click={() => handleFormSubmit("")} class="btn btn-primary btn-block mb-4">Submit another response</button>
+                        <button on:click={() => handleFormSubmit("")} class="btn btn-primary btn-block mb-4 col-6">Submit another response</button>
                         {:else if error}
                         <h4>{error}</h4>
-                        <button on:click={() => error = ""} class="btn btn-primary btn-block mb-4">Go back</button>
+                        <button on:click={() => error = ""} class="btn btn-primary btn-block mb-4 col-6">Go back</button>
                         {:else}
-                        <h4>loading...</h4>
+                        <FormPlaceholder />
                         {/if}
                     </div>
                 </div>

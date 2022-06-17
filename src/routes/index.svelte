@@ -3,35 +3,35 @@
         const res = await fetch(`${import.meta.env.VITE_BASE_URL}/rcms-api/3/form-answers?inquiry_id=5`);
         const data = await res.json();
 
-        const slider = await fetch(`${import.meta.env.VITE_BASE_URL}/rcms-api/6/slider`);
-        const slider_res = await slider.json();
+        const home = await fetch(`${import.meta.env.VITE_BASE_URL}/rcms-api/6/slider/7`);
+        const home_res = await home.json();
+        console.log(home_res)
         
         return {
             props: {
                 data,
-                slider_res,
+                home_res,
             },
         };
     };
 </script>
 
 <script>
-    export let data, slider_res;
+    export let data, home_res;
     import Testimonial from "../components/Testimonial.svelte";
     import HomeSlider from "../components/HomeSlider.svelte";
 </script>
 
-<HomeSlider slider_res={slider_res} />
+<HomeSlider slider_res={home_res.details.ext_1} />
 
 <div class="container justify-content-center row my-4">
   <div class="col-lg-8">
-    <h5>Perched in the serene setting of low top Nathdwara Hills, The Marutinandan Grand offers luxurious accommodations and thoughtfully curated amenities.
+    <h5>{home_res.details.ext_2}
     </h5>
     <ul class="mt-4">
-        <li>The hotel features a wellness center that offers rejuvenating therapies and a gymnasium for fitness enthusiasts. </li>
-        <li>The hotel has a discotheque featuring throbbing music, perfect for night parties. </li>
-        <li>Kids can have a fun-filled stay experience with the kids' play area.</li>
-        <li>The in-house recreational club offers various indoor games.</li>
+      {#each home_res.details.ext_3 as item}
+        <li>{item}</li>
+      {/each}
     </ul>
     <a href="/about">
         <button type="button" class="btn btn-dark">More about us</button>
@@ -48,8 +48,8 @@
           <div class="ratio ratio-16x9">
             <iframe
               class="shadow-1-strong rounded"
-              src="https://www.youtube.com/embed/vlDzYIIOYmM"
-              title="YouTube video"
+              src={home_res.details.ext_4.url}
+              title={home_res.details.ext_4.title}
               allowfullscreen
             ></iframe>
           </div>

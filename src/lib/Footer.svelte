@@ -5,6 +5,7 @@
 
     let message = "";
     let error = "";
+    let loading = false
 
     const form_fields = data.details.cols;
 
@@ -15,6 +16,7 @@
             error = "";
             return;
         }
+        loading = await true;
         try {
             const submit = await fetch(`${import.meta.env.VITE_BASE_URL}/rcms-api/3/form?id=3`, {
                 method: "POST",
@@ -30,6 +32,8 @@
             message = data1.messages[0];
         } catch(err) {
             error = err;
+        } finally {
+          loading = false;
         }
     }
 
@@ -39,12 +43,15 @@
     <div class="container-fluid row p-4 pb-0 justify-content-between">
       <section class="mb-4 col-lg-4">
         {#each media_res.list as item}
-            <a class="btn btn-outline-light btn-floating m-1" href={item.ext_3} role="button">
+            <a class="btn btn-outline-light btn-floating m-1" href={item.ext_3} target="_blank" role="button">
                 <i class="fab fa-{item.ext_2}"></i>
             </a>
         {/each}
       </section>
       <section class="col-lg-5">
+        {#if loading}
+        <p>Subscribing, please wait...</p>
+        {:else}
         <form on:submit|preventDefault={handleSubscribe} ref="form">
           <!--Grid row-->
           <div class="row d-flex justify-content-center">
@@ -61,7 +68,7 @@
                 {/if}
                 {/each}
                 {:else if message}
-                <p>{message}</p>
+                <p class="mt-1">{message}</p>
                 {:else if error}
                 <p>{error}</p>
                 {/if}
@@ -83,16 +90,21 @@
           </div>
           <!--Grid row-->
         </form>
+        {/if}
       </section>
       <!-- Section: Form -->
     </div>
     <div class="copyright p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2020 Copyright:
+      © 2022 Copyright:
       <a href="https://mdbootstrap.com/">restrosite.com</a>
     </div>
 </footer>
 
 <style>
+  .container-fluid {
+    background-color: #2d2d2d !important;
+    margin: 0 ;
+  }
     .copyright, a {
         text-align: center;
         color: rgba(255, 255, 255, 0.5)
@@ -100,4 +112,10 @@
     .form-outline.form-white .form-control {
         border: 1px dotted;
     }
+    .form-label {
+        top: 5px;
+        background-color: #2d2d2d;
+        padding: 0 5px;       
+    }
 </style>
+

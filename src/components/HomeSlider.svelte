@@ -4,38 +4,24 @@
 
 <div id="carouselDarkVariant" class="carousel slide carousel-fade carousel-dark" data-mdb-ride="carousel">
     <div class="carousel-indicators">
+      {#each slider_res as item, index}
       <button
         data-mdb-target="#carouselDarkVariant"
-        data-mdb-slide-to="0"
-        class="active"
+        data-mdb-slide-to={index}
+        class="{index === 0 && 'active'}"
         aria-current="true"
         aria-label="Slide 1"
       ></button>
-      <button
-        data-mdb-target="#carouselDarkVariant"
-        data-mdb-slide-to="1"
-        aria-label="Slide 1"
-      ></button>
-      <button
-        data-mdb-target="#carouselDarkVariant"
-        data-mdb-slide-to="2"
-        aria-label="Slide 1"
-      ></button>
-      <button
-        data-mdb-target="#carouselDarkVariant"
-        data-mdb-slide-to="3"
-        aria-label="Slide 1"
-      ></button>
+      {/each}
     </div>
 
     <div class="carousel-inner">
       <!-- Single item -->
-      {#each slider_res.list as item, index}
+      {#each slider_res as item, index}
       <div class="carousel-item {index === 0 ? 'active' : ''}">
-        <img src={item.ext_1.url} class="d-block w-100" alt="Motorbike Smoke"/>
+        <img src={item.url} class="d-block w-100" alt="Motorbike Smoke"/>
         <div class="carousel-caption d-none d-md-block">
-          <h5>{item.subject}</h5>
-          <p>{item.ext_1.desc}</p>
+          <p>{item.desc}</p>
         </div>
       </div>
       {/each}
