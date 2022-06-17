@@ -3,12 +3,12 @@
     import FormPlaceholder from './components/FormPlaceholder.svelte'
 
     let data = "";
-    let activeTab = "enquiry";
-    const tabList = {"enquiry": "6", "feedback": "5"}
+    let activeTab = "inquiry";
+    const tabList = {"inquiry": "6", "feedback": "5"}
 
     const handleLoad = async (id) => {
         if (id === "6") {
-            activeTab = "enquiry";
+            activeTab = "inquiry";
         } else {
             activeTab = "feedback";
         }
