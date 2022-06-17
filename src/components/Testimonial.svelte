@@ -2,6 +2,7 @@
     export let data;
 </script>
 <div id="carouselExampleCaptions" class="carousel slide" data-mdb-ride="carousel">
+    <center><h1 class="fw-bold text-white">TESTIMONIAL</h1></center>
     <div class="carousel-inner">
         {#each data.list as item, index}
         <div class="carousel-item {index === 0 ? 'active' : ''}">

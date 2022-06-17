@@ -45,6 +45,7 @@
     <section class="">
       <div class="row d-flex justify-content-center">
         <div class="col-lg-6">
+          <center><h1 class="fw-bold">AERIAL VIEW</h1></center>
           <div class="ratio ratio-16x9">
             <iframe
               class="shadow-1-strong rounded"
