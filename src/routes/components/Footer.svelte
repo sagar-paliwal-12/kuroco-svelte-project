@@ -45,8 +45,6 @@
 
       const data1 = await submit.json();
 
-      console.log("data1", data1)
-
       if ("messages" in data1) {
         message = data1.messages[0] || "Successfull!";
       } else {

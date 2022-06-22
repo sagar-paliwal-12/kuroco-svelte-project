@@ -5,7 +5,6 @@
 
         const home = await fetch(`${import.meta.env.VITE_BASE_URL}/rcms-api/6/slider/7`);
         const home_res = await home.json();
-        console.log(home_res)
         
         return {
             props: {
