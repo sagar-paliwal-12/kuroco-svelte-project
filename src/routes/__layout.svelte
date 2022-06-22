@@ -15,8 +15,8 @@
 </script>
 
 <script>
-    import Nav from "./components/Nav.svelte"
-    import Footer from "./components/Footer.svelte";
+    import Nav from "$lib/Nav.svelte"
+    import Footer from "$lib/Footer.svelte";
     export let media_res, activeNav;
 </script>
 

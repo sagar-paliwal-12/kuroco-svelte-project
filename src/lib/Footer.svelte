@@ -136,7 +136,7 @@
   </div>
   <div class="copyright p-3" style="background-color: rgba(0, 0, 0, 0.2);">
     © 2022 Copyright:
-    <a href="#">restrosite.com</a>
+    <a href="/">restrosite.com</a>
   </div>
 </footer>
 
