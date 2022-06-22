@@ -18,8 +18,8 @@
 </script>
 
 <script>
-    import Nav from "$lib/Nav.svelte"
-    import Footer from "$lib/Footer.svelte";
+    import Nav from "./components/Nav.svelte"
+    import Footer from "./components/Footer.svelte";
     export let data, media_res, activeNav;
 </script>
 

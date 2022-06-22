@@ -102,9 +102,9 @@
                             {#if value.required != 0}
                             <div class="form-outline form-black mb-4">
                                 {#if value.title === "message" || value.title === "issue"}
-                                <textarea name={key} class="form-control" id="textAreaExample" rows="4"></textarea>
+                                <textarea name={key} class="form-control" id="textAreaExample" rows="4" required={value.required === 2}></textarea>
                                 {:else}
-                                <input type={value.title} name={key} id="form4Example1" class="form-control" />
+                                <input type={value.title} name={key} id="form4Example1" class="form-control" required={value.required === 2}/>
                                 {/if}
                                 <label class="form-label" for="form4Example1">
                                     {value.title}
