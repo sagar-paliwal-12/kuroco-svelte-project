@@ -1,13 +1,11 @@
 <script>
-  export let data, media_res, ref;
+  export let media_res, ref;
 
   let message = "";
   let error = "";
   let loading = false;
 
   let formType = "subscribe";
-
-  const form_fields = data.details.cols;
 
   const handleSubscribe = async () => {
     if (message || error) {
@@ -81,23 +79,19 @@
           <div class="row d-flex justify-content-center">
             <div class="col-md-5 col-7">
               {#if !message && !error}
-                {#each Object.entries(form_fields) as [key, value]}
-                  {#if value.required === 2}
-                    <div class="form-outline form-white mb-4">
-                      <input
-                        type={value.title}
-                        name={value.title}
-                        id="form5Example29"
-                        class="form-control"
-                        aria-label="readonly input example"
-                        required
-                      />
-                      <label class="form-label" for="form5Example29"
-                        >{value.title}</label
-                      >
-                    </div>
-                  {/if}
-                {/each}
+                <div class="form-outline form-white mb-4">
+                  <input
+                    type="email"
+                    name="email"
+                    id="form5Example29"
+                    class="form-control"
+                    aria-label="readonly input example"
+                    required
+                  />
+                  <label class="form-label" for="form5Example29"
+                    >email</label
+                  >
+                </div>
               {:else if message}
                 <p class="mt-1">{message}</p>
               {:else if error}
