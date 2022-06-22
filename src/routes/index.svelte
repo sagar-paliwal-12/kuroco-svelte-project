@@ -17,8 +17,8 @@
 
 <script>
     export let data, home_res;
-    import Testimonial from "./components/Testimonial.svelte";
-    import HomeSlider from "./components/HomeSlider.svelte";
+    import Testimonial from "../components/Testimonial.svelte";
+    import HomeSlider from "../components/HomeSlider.svelte";
 </script>
 
 <HomeSlider slider_res={home_res.details.ext_1} />

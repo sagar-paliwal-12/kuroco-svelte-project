@@ -1,6 +1,6 @@
 <script>
     import { onMount } from "svelte";
-    import FormPlaceholder from './components/FormPlaceholder.svelte'
+    import FormPlaceholder from '../../components/FormPlaceholder.svelte'
 
     let data = "";
     let activeTab = "inquiry";

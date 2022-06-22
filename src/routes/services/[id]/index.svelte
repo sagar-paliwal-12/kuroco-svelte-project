@@ -13,7 +13,7 @@
 </script>
 
 <script>
-    import ServicesImage from "./components/ServicesImage.svelte";
+    import ServicesImage from "../../../components/ServicesImage.svelte";
 
     export let data;
 </script>
