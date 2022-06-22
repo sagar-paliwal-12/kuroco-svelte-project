@@ -38,8 +38,6 @@
                 <div class="card-body">
                   <h5 class="card-title">Udaipur</h5>
                   <p class="card-text">The Marutinandan Grand, NH. 8, Odan, Nathdwara, Rajasthan 313301</p>
-                  <!-- <h5 class="card-title">Transit office</h5>
-                  <p class="card-text">Sukhadia CirPanchwati, Udaipur, Rajasthan 313001</p> -->
                   <h5 class="card-title">Mobile</h5>
                   <p class="card-text">(+91)7297818022, 9950305525</p>
                   <h5 class="card-title">Email</h5>
