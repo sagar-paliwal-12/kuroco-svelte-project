@@ -48,7 +48,6 @@
       } else {
         message = data1.errors[0].message;
       }
-
     } catch (err) {
       error = err;
     } finally {
@@ -88,9 +87,7 @@
                     aria-label="readonly input example"
                     required
                   />
-                  <label class="form-label" for="form5Example29"
-                    >email</label
-                  >
+                  <label class="form-label" for="form5Example29">email</label>
                 </div>
               {:else if message}
                 <p class="mt-1">{message}</p>
@@ -104,26 +101,47 @@
             <div class="col-auto">
               <!-- Submit button -->
               {#if !message && !error}
-              <div class="dropdown">
-                <button
-                  class="btn btn-primary dropdown-toggle"
-                  type="button"
-                  id="dropdownMenuButton"
-                  data-mdb-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Submit
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><button type="submit" on:click={() => formType="subscribe/1"} class="btn btn-li"><p>Subscribe</p></button></li>
-                  <li><button type="submit" on:click={() => formType="unsubscribe/1"} class="btn btn-li"><p>Unsubscribe</p></button></li>
-                  <li><button type="submit" on:click={() => formType="sendMail"} class="btn btn-li"><p>Send Test Email</p></button></li>
-                </ul>
-              </div>
+                <div class="dropdown">
+                  <button
+                    class="btn btn-primary dropdown-toggle"
+                    type="button"
+                    id="dropdownMenuButton"
+                    data-mdb-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Submit
+                  </button>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="dropdownMenuButton"
+                  >
+                    <li>
+                      <button
+                        type="submit"
+                        on:click={() => (formType = "subscribe/1")}
+                        class="btn btn-li"><p>Subscribe</p></button
+                      >
+                    </li>
+                    <li>
+                      <button
+                        type="submit"
+                        on:click={() => (formType = "unsubscribe/1")}
+                        class="btn btn-li"><p>Unsubscribe</p></button
+                      >
+                    </li>
+                    <li>
+                      <button
+                        type="submit"
+                        on:click={() => (formType = "sendMail")}
+                        class="btn btn-li"><p>Send Test Email</p></button
+                      >
+                    </li>
+                  </ul>
+                </div>
               {:else}
-              <button type="submit" class="btn btn-outline-light mb-4">
-                Go Back
-              </button>
+                <button type="submit" class="btn btn-outline-light mb-4">
+                  Go Back
+                </button>
               {/if}
             </div>
             <!--Grid column-->
@@ -167,7 +185,7 @@
   li p {
     margin-bottom: 0;
   }
-  li:hover p{
+  li:hover p {
     color: #1266f1;
   }
 </style>

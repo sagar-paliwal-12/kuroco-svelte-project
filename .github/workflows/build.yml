@@ -33,6 +33,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+        env:
+          NODE_OPTIONS: --max-old-space-size=16384
       - name: Generate
         run: npm run generate
         # - name: Zip artifact for upload
